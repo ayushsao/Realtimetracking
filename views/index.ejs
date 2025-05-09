@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Location Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="location-animation">
+            <div class="map-pin"></div>
+            <div class="radar-circle"></div>
+            <div class="radar-circle"></div>
+            <div class="radar-circle"></div>
+            <div class="pulse"></div>
+        </div>
+        <div class="loading-text">
+            <span>L</span><span>O</span><span>C</span><span>A</span><span>T</span><span>I</span><span>N</span><span>G</span><span>.</span><span>.</span><span>.</span>
+        </div>
+    </div>
+
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-location-dot"></i>
+                <h1>Realtime Tracker</h1>
+            </div>
+            <div class="connection-status">
+                <span id="connection-indicator"></span>
+                <span id="connection-text">Connected</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="sidebar">
+                <div class="user-info">
+                    <h3>Your Session</h3>
+                    <p>ID: <span id="user-id">Loading...</span></p>
+                    <p>Status: <span id="status">Active</span></p>
+                </div>
+                <div class="active-users">
+                    <h3>Connected Users</h3>
+                    <ul id="users-list">
+                        <!-- Users will be added dynamically -->
+                    </ul>
+                </div>
+                <div class="controls">
+                    <button id="center-map"><i class="fas fa-crosshairs"></i> Center Map</button>
+                    <button id="share-location"><i class="fas fa-share-alt"></i> Share Location</button>
+                </div>
+            </div>
+            <div id="map"></div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Realtime Location Tracker | <a href="#">Privacy Policy</a></p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
